@@ -26,12 +26,8 @@ class Bottles
     BottleNumber.new(number).action
   end
 
-  def pronoun(number)
-    BottleNumber.new(number).pronoun
-  end
-
   def successor(number)
-    BottleNumber.new(number).successor(number)
+    BottleNumber.new(number).successor
   end
 end
 
@@ -61,11 +57,11 @@ class BottleNumber
     if number == 0
       "Go to the store and buy some more, "
     else
-      "Take #{pronoun(number)} down and pass it around, "
+      "Take #{pronoun} down and pass it around, "
     end
   end
 
-  def pronoun(delete_me=nil)
+  def pronoun
     if number == 1
       "it"
     else
@@ -73,7 +69,7 @@ class BottleNumber
     end
   end
 
-  def successor(number)
+  def successor
     if number == 0
       99
     else
