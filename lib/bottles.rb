@@ -24,12 +24,15 @@ class BottleNumber
       BottleNumber0
     when 1
       BottleNumber1
+    when 6
+      BottleNumber6
     else
       BottleNumber
     end.new(number)
   end
 
   attr_reader :number
+
   def initialize(number)
     @number = number
   end
@@ -80,5 +83,15 @@ class BottleNumber1 < BottleNumber
 
   def pronoun
     "it"
+  end
+end
+
+class BottleNumber6 < BottleNumber
+  def container
+    "six-pack"
+  end
+
+  def quantity
+    "1"
   end
 end
